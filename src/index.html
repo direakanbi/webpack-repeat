@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css">
+    <title>WebPack Todo-List</title>
+  </head>
+  <body>
+    <main>
+      <section class="header card">
+
+        <!--Card list 1-->
+        <article>
+        <div class="card-list">
+        <div class="first-wrapper">
+          <div class="title-wrapper">
+            <input type="disabled" class="title" disabled value="Today's To Do">
+          </div>
+        </div>
+       </div>
+       <div class="seperator1"></div>
+
+        <!--Card list 2-->
+      <div class="todo-body">
+        <div class="full-width">
+          <form class="todo-task">
+            <input
+              placeholder="Add To Your List..."
+              type="text"
+              class="full-width wrapper input"
+              
+            />
+            <i class="fa fa-reply wrapper"></i>
+          </form>
+          <div class="seperator1"></div>
+        
+          <ul class="todo-data" id="todo-data"></ul>
+        </div|>  
+      <!--Submit btn-->
+      <div class="clear-btn btn-flex completed">
+        <div class="full-width">
+          <button
+            type="button"
+            class="completed btn-clear"
+            id="btn"
+          >Clear all completed</button>
+        </div>
+      </div>
+
+      </div>
+
+    </article>
+    </section>
+    </main>
+  </body>
+</html>

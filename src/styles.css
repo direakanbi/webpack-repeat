@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  margin-top: 250px;
+}
+
+.card {
+  margin: 10%;
+  padding: 50px;
+  justify-content: right;
+}
+
+.title {
+  border: none;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.title-wrapper {
+  height: 20px;
+  padding-left: 10px;
+  margin: 15px;
+}
+
+.wrapper {
+  border: none;
+  width: 96%;
+  height: 40px;
+  padding-left: 30px;
+  font-size: 17px;
+}
+
+.wrapper:focus {
+  outline: none;
+}
+
+.seperator1 {
+  width: 100%;
+  height: 1px;
+  background-color: darkgray;
+}
+
+.seperator2 {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: 1px;
+  background-color: darkgray;
+}
+
+.completed {
+  width: 100%;
+  border: none;
+  background-color: white;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+::placeholder {
+  font-family: italic;
+}
+
+.list-container {
+  display: flex;
+  align-items: center;
+  height: 30px;
+}
+
+.full-width {
+  margin-bottom: 10px;
+}
+
+.btn-clear {
+  margin-bottom: 20px;
+}
+
+article {
+  box-shadow: 6px 6px 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.checks {
+  padding-left: 10px;
+}
+
+.todo-data {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  border-bottom: 1px solid rgba(180, 180, 180, 0.349);
+  height: 30px;
+}
+
+.todo-text {
+  margin-left: 20px;
+}
+
+.check-input {
+  margin-left: 10px;
+}
+
+.del-menu {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.first-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 800px;
+  justify-content: space-between;
+  background-color: white;
+  align-items: center;
+}
+
+.text-underline {
+  text-decoration: line-through;
+  background-color: rgb(139, 132, 132);
+}
