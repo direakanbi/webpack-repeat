@@ -1,57 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css">
-    <title>WebPack Todo-List</title>
-  </head>
-  <body>
-    <main>
-      <section class="header card">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/b7a7cffe76.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <title>To Do List</title>
+</head>
 
-        <!--Card list 1-->
-        <article>
-        <div class="card-list">
-        <div class="first-wrapper">
-          <div class="title-wrapper">
-            <input type="disabled" class="title" disabled value="Today's To Do">
-          </div>
-        </div>
-       </div>
-       <div class="seperator1"></div>
+<body>
+  <div class="container">
+    <div class="header">
+      <h3 class="title">Today's To Do</h3>
+      <i class="fa fa-refresh" id="refresh" aria-hidden="true"></i>
+    </div>
+      
+    <hr>
 
-        <!--Card list 2-->
-      <div class="todo-body">
-        <div class="full-width">
-          <form class="todo-task">
-            <input
-              placeholder="Add To Your List..."
-              type="text"
-              class="full-width wrapper input"
-              
-            />
-            <i class="fa fa-reply wrapper"></i>
-          </form>
-          <div class="seperator1"></div>
-        
-          <ul class="todo-data" id="todo-data"></ul>
-        </div|>  
-      <!--Submit btn-->
-      <div class="clear-btn btn-flex completed">
-        <div class="full-width">
-          <button
-            type="button"
-            class="completed btn-clear"
-            id="btn"
-          >Clear all completed</button>
-        </div>
-      </div>
+    <div class="input">
+      <input type="text" class="toDo" placeholder="Add to your list...">
+      <i class="material-icons-outlined" id="add" aria-hidden="true"></i>
+    </div>
 
-      </div>
+    <hr>
 
-    </article>
-    </section>
-    </main>
-  </body>
+    <div class="list"></div>
+
+    <div class="clear">
+      <p>Clear all completed</p>
+    </div>
+  </div>
+</body>
 </html>
