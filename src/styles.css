@@ -23,11 +23,10 @@ body {
 }
 
 .toDo {
-  border-bottom: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
   font-family: italics, sans-serif;
+  font-family: inherit;
+  font-weight: bold;
+  outline: none;
 }
 
 .task {
@@ -48,11 +47,3 @@ hr {
   color: #d3d3d3;
 }
 
-.material-icons-outlined {
-  outline: none;
-}
-
-.toDo {
-  font-family: inherit;
-  font-weight: bold;
-}
