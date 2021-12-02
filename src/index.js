@@ -1,36 +1,67 @@
 import './styles.css';
-import displaylist from './functions';
+import { checkEvent, checkboxState } from './storage';
+import { setToLocalStorage, getFromLocalStorage } from './functions';
 
-export const list = document.querySelector('#todo-data');
-const data = [
-  {
-    description: 'Go swimming',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Create an animated puppet',
-    completed: false,
-    index: 2,
-  },
+// task array of objects
+const toDoList = [
   {
     description: 'Hack NASA',
     completed: false,
+    index: 0,
+  },
+  {
+    description: 'Start Webpack Project',
+    completed: false,
+    index: 1,
+  },
+  {
+    description: 'Make Dinner',
+    completed: true,
     index: 2,
   },
 ];
 
-export const todos = data.sort((a, b) => {
-  const indexA = a.index;
-  const indexB = b.index;
-
-  if (indexA < indexB) {
-    return -1;
+// addBooks list
+const addBooks = () => {
+  if (getFromLocalStorage() === null) {
+    setToLocalStorage(toDoList);
+  } else {
+    const sortedList = getFromLocalStorage().sort((a, b) => a.index - b.index);
+    sortedList.sort((x, y) => x.index - y.index);
+    for (let i = 0; i < sortedList.length; i += 1) {
+      if (sortedList[i].completed === true) {
+        checkEvent(sortedList[i].index, true);
+      } else {
+        checkEvent(sortedList[i].index, false);
+      }
+      // create list item
+      const list = document.querySelector('.list');
+      list.insertAdjacentHTML(
+        'beforeend',
+        `
+          <div class="task">
+            <div class="checks">
+              <input type="checkbox" name="item-${sortedList[i].index
+}" class="checkbox" ${sortedList[i].completed ? 'checked' : ''}>
+              <span class="checkmark" ${sortedList[i].completed
+    ? 'style="text-decoration: line-through"'
+    : ''
+}>${sortedList[i].description}</span>
+            </div>
+            <div class="material-icons-outlined">more_vert</div>
+          </div>
+        `,
+      );
+      checkEvent();
+    }
   }
-  if (indexA > indexB) {
-    return 1;
-  }
-  return 0;
-});
+};
 
-window.addEventListener('load', displaylist(todos, list));
+window.onload = () => {
+  checkboxState(toDoList);
+  addBooks();
+  getFromLocalStorage(toDoList);
+  setToLocalStorage(toDoList);
+};
+
+export default { addBooks };
