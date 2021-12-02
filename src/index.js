@@ -1,36 +1,58 @@
 import './styles.css';
-import displaylist from './functions';
+import { sortIndex } from './functions';
+import { setToLocalStorage, getFromLocalStorage, reloadToDo } from './storage';
+import { addToDo, editToDo, clearAll } from './addremove.js';
 
-export const list = document.querySelector('#todo-data');
-const data = [
-  {
-    description: 'Go swimming',
-    completed: true,
-    index: 1,
-  },
-  {
-    description: 'Create an animated puppet',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Hack NASA',
-    completed: false,
-    index: 2,
-  },
-];
+const toDoList = [];
 
-export const todos = data.sort((a, b) => {
-  const indexA = a.index;
-  const indexB = b.index;
-
-  if (indexA < indexB) {
-    return -1;
+// populate list
+const populate = (toDoList, sort) => {
+  let sortedTodo = [];
+  if (sort) {
+    sortedTodo = toDoList.sort((a, b) => a.index - b.index);
+  } else {
+    sortedTodo = toDoList;
   }
-  if (indexA > indexB) {
-    return 1;
+
+  for (let i = 0; i < sortedTodo.length; i += 1) {
+    let style = '';
+    let checkbox = '';
+    if (sortedTodo[i].completed) {
+      style = 'text-decoration: line-through;';
+      checkbox = 'checked';
+    } else {
+      style = 'text-decoration: none;';
+      checkbox = '';
+    }
+    // create list item
+    const list = document.createElement('example');
+    list.innerHTML += `<div class="task">
+          <div class="checks">
+            <input type="checkbox" name="item-${sortedTodo[i].index}" ${checkbox}>
+            <label for="item-${sortedTodo[i].index}" style="${style}" contenteditable=true>${sortedTodo[i].description}</label>
+          </div>
+          <div class="buttons-end">
+            <div class="material-icons-outlined">more_vert</div>
+            <span class="material-icons-outlined delete" id="item-${sortedTodo[i].index}">delete_outline</span>
+          </div>
+        </div>`;
+    document.querySelector('.list').appendChild(list);
   }
-  return 0;
+};
+
+window.addEventListener('load', () => {
+  const localStore = getFromLocalStorage();
+  if (localStore == null) {
+    setToLocalStorage(toDoList, true);
+    populate(toDoList);
+  } else {
+    const sortedTodo = sortIndex(localStore);
+    populate(sortedTodo, false);
+  }
+  reloadToDo();
+  addToDo();
+  editToDo();
+  clearAll();
 });
 
-window.addEventListener('load', displaylist(todos, list));
+export { toDoList, populate };
