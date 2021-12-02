@@ -47,3 +47,12 @@ hr {
   margin: 0;
   color: #d3d3d3;
 }
+
+.material-icons-outlined {
+  outline: none;
+}
+
+.toDo {
+  font-family: inherit;
+  font-weight: bold;
+}
