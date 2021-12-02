@@ -1,3 +1,4 @@
+
 import './styles.css';
 import { sortIndex } from './functions';
 import { setToLocalStorage, getFromLocalStorage, reloadToDo } from './storage';
