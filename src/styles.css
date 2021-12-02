@@ -46,3 +46,7 @@ hr {
   margin: 0;
   color: #d3d3d3;
 }
+
+.material-icons-outlined {
+  cursor: pointer;
+}
