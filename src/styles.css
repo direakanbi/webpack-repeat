@@ -23,11 +23,10 @@ body {
 }
 
 .toDo {
-  border-bottom: none;
-  border-top: none;
-  border-left: none;
-  border-right: none;
   font-family: italics, sans-serif;
+  font-family: inherit;
+  font-weight: bold;
+  outline: none;
 }
 
 .task {
@@ -46,4 +45,8 @@ body {
 hr {
   margin: 0;
   color: #d3d3d3;
+}
+
+.material-icons-outlined {
+  cursor: pointer;
 }
