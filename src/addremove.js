@@ -19,7 +19,6 @@ const addToDo = () => {
       const inputItem = document.getElementsByName(index)[0];
       inputItem.parentElement.parentElement.remove();
       refreshStore();
-      window.location.reload();
     });
   }
 };
