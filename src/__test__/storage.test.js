@@ -1,5 +1,5 @@
 import StorageMock from '../__mocks__/storage.js';
- 
+
 describe('Storage test', () => {
   const storage = new StorageMock();
   storage.setItem('list', []);
