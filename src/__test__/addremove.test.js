@@ -5,7 +5,6 @@ import indexUpdate from '../__mocks__/indexUpdate';
 import clearAll from '../__mocks__/clearAll';
 import status from '../__mocks__/status';
 
-
 jest.mock('../functions');
 jest.mock('../storage');
 jest.mock('../addremove');
