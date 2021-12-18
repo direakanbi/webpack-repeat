@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "This repo was setup for the creation of my To-Do List",
   "private": true,
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --coverage",
+    "test-watch": "jest --watchAll --coverage ",
     "build": "webpack",
     "start": "webpack serve --open"
   },
@@ -20,17 +24,23 @@
   },
   "homepage": "https://github.com/direakanbi/webpack-setup#readme",
   "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-regular-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "babel": "^6.23.0",
+    "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "webpack": "^5.61.0",
     "webpack-cli": "^4.9.1"
   },
   "devDependencies": {
+    "babel-jest": "^27.4.5",
     "css-loader": "^6.5.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.4.5",
     "style-loader": "^3.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
