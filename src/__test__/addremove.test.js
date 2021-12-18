@@ -1,5 +1,10 @@
 import add from '../__mocks__/add';
 import removeItem from '../__mocks__/removeitem';
+import editItem from '../__mocks__/editItem';
+import indexUpdate from '../__mocks__/indexUpdate';
+import clearAll from '../__mocks__/clearAll';
+import status from '../__mocks__/status';
+
 
 jest.mock('../functions');
 jest.mock('../storage');
@@ -26,7 +31,7 @@ describe('Add function', () => {
   test('Update the index of list when one item is deleted', () => {
     expect(indexUpdate()).toEqual([1, 2]);
   });
-  
+
   test('Check list item when status changes', () => {
     expect(status()).toBe(true);
   });
